@@ -8,9 +8,8 @@ const Box = (props: MeshProps) => {
   const ref = useRef<THREE.Mesh>(null!)
 
   useFrame((_, delta) => {
-    if( !ref.current) return
-    ref.current.rotation.x += 1 * delta
-    ref.current.rotation.y += 0.5 * delta
+    ref.current.rotation!.x += 1 * delta
+    ref.current.rotation!.y += 0.5 * delta
   })
 
   return (
@@ -23,7 +22,7 @@ const Box = (props: MeshProps) => {
 
 const App = () => {
   return (
-    <div style={{ width: "75vw", height: "75vh" }}>
+    <div style={{ width: "99vw", height: "75vh" }}>
       <Canvas camera={{ position: [3, 1, 2] }}>
         <Box position={[1, 1, 1]} name="A" />
         <Environment preset="forest" background />
